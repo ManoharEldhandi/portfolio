@@ -1,0 +1,687 @@
+/* Ensure the body fills the viewport and has no margin */
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white; /* White text for contrast */
+}
+
+/* Navigation bar styles */
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px 0;
+    z-index: 2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Style for the navigation links */
+#navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 0 20px; /* Space between links */
+    transition: color 0.3s;
+}
+
+#navbar a:hover {
+    color: #FFD700; /* Hover color */
+}
+
+/* Footer styles */
+#footer {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+#footer p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.social-icons a {
+    color: white;
+    margin: 0 15px;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #FFD700;
+}
+
+/* Transparent Layer Styles */
+#transparent-layer {
+    position: absolute;
+    top: 20px; /* Adjust to be directly below the navbar */
+    bottom: 20px; /* Adjust to be directly above the footer */
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black */
+    color: white; /* White text for contrast */
+    overflow-y: auto; /* Scrollable if content overflows */
+    z-index: 1; /* Positioned above the animated background */
+    padding: 20px;
+}
+
+.content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#transparent-layer h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+#transparent-layer p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Base styles for typewriter effect */
+#typewriter-text span {
+    display: inline-block; /* Each span will take only the required width */
+    width: 100%; /* Span takes the full width */
+    text-align: left; /* Align text to the left */
+}
+/* Ensure the body fills the viewport and has no margin */
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Open Sans', sans-serif;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white; /* White text for contrast */
+}
+
+/* Navigation bar styles */
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px 0;
+    z-index: 2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Style for the navigation links */
+#navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 0 20px; /* Space between links */
+    transition: color 0.3s;
+}
+
+#navbar a:hover {
+    color: #FFD700; /* Hover color */
+}
+
+/* Footer styles */
+#footer {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+#footer p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.social-icons a {
+    color: white;
+    margin: 0 15px;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #FFD700;
+}
+
+/* Transparent Layer Styles */
+#transparent-layer {
+    position: absolute;
+    top: 44px; /* Adjust to be directly below the navbar */
+    bottom: 98px; /* Adjust to be directly above the footer */
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black */
+    color: white; /* White text for contrast */
+    overflow-y: auto; /* Scrollable if content overflows */
+    z-index: 1; /* Positioned above the animated background */
+    padding: 20px;
+}
+
+.content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Contact Form Styles */
+.contact-form-container {
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(225, 225, 225, 0.8);
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 80px auto 40px auto; /* Adjusted margin: top 20px, bottom 40px, centered horizontally */
+}
+
+.contact-form-container h2 {
+    color: #FFD700; /* Highlight color */
+    margin-bottom: 20px;
+}
+
+.contact-inputs {
+    display: grid;
+    grid-gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.input-group input,
+.input-group textarea {
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.input-group textarea {
+    resize: vertical; /* Allow vertical resizing */
+}
+
+#send-message-btn {
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FFD700;
+    color: #000;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#send-message-btn:hover {
+    background-color: #FFA500; /* Hover color */
+}
+
+/* Project Page Styles */
+#projects-page {
+    display: block;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.2); /* Adjust as needed */
+    color: white; /* Text color */
+    position: relative; /* Ensure position relative for absolute positioning */
+}
+
+/* Carousel styles */
+.carousel {
+    width: 100%; /* Ensure carousel takes full width */
+    max-width: 800px; /* Set maximum width */
+    height: 530px; /* Set fixed height for the carousel */
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds height */
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(225, 225, 225, 0.8);
+    position: relative; /* Ensure position relative for absolute positioning */
+}
+
+.carousel h2 {
+    font-size: 24px;
+    color: #FFD700;
+    margin-bottom: 10px;
+    text-align: left; /* Align header text to the left */
+}
+
+.carousel p {
+    line-height: 1.6;
+    color: #FFFFFF;
+    margin-bottom: 15px;
+    text-align: left; /* Align paragraph text to the left */
+}
+
+.carousel-controls {
+    position: fixed;
+    bottom: 110px; /* Adjust position as needed */
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Space controls evenly */
+    opacity: 0.8;
+    padding: 0 20px; /* Adjust padding for space around controls */
+}
+
+.carousel-controls button {
+    padding: 8px 20px;
+    background-color: #FFD700 ; /* Default background color */
+    color: #000;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.carousel-controls button:hover {
+    background-color: #FFA500; /* Background color on hover */
+}
+
+.carousel-indicators {
+    position: fixed;
+    bottom: 111px; /* Adjust position as needed */
+    left: 51.5%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+}
+
+.carousel-indicators .indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.carousel-indicators .active {
+    background-color:#FFD700;
+}
+
+/* Positioning Carousel Controls */
+#carousel-prev {
+    position: absolute;
+    left: 30px; /* Adjust as needed */
+    bottom: 2px; /* Adjust as needed */
+}
+
+#carousel-next {
+    position: absolute;
+    left: 650px; /* Adjust as needed */
+    bottom: 2px; /* Adjust as needed */
+    z-index: 1000; /* Ensure next button is above other elements */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .carousel {
+        padding: 15px;
+    }
+    
+    .carousel h2 {
+        font-size: 20px;
+    }
+    
+    .carousel p {
+        font-size: 14px;
+    }
+    
+    .carousel-controls {
+        position: static;
+        transform: none;
+        margin-top: 15px;
+        justify-content: space-between; /* Space controls evenly */
+        width: 100%;
+        padding: 0 20px; /* Adjust padding for space around controls */
+    }
+    
+    .carousel-controls button {
+        margin-right: 10px; /* Add space between buttons */
+        margin-bottom: 0; /* Remove bottom margin for buttons */
+    }
+    
+    .carousel-indicators {
+        position: static;
+        transform: none;
+        margin-top: 10px;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+/* About page*/
+
+/* General Page Styles */
+#about-page {
+    width: 100%;
+    overflow-x: hidden;
+    color: #fff;
+}
+
+/* Image Section */
+.image-section {
+    top: 20px;
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 50px; /* Gap between sections */
+    box-shadow: 0 0 10px rgba(225, 225, 225, 0.8);
+}
+
+.image-section img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    filter: brightness(80%);
+}
+
+/* Introduction Section */
+.intro-section {
+    background-color: rgba(0, 0, 0, 0.2); /* Transparent background */
+    color: white;
+    padding: 40px;
+    text-align: left;
+    max-width: 650px;
+    margin: 0 auto 50px; /* Center section and add gap */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(225, 225, 225, 0.8);
+}
+
+.intro-content h2 {
+    font-size: 32px;
+    color: #FFD700;
+    margin-bottom: 20px;
+}
+
+.intro-content p {
+    line-height: 1.6;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+
+#typewriter {
+    font-size: 24px;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.6;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+
+#resume-button {
+    padding: 10px 20px;
+    background-color: #FFD700 ;
+    opacity: 0.8;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#resume-button:hover {
+    background-color: #FFA500;
+}
+
+/* Skills Section */
+.skills-section {
+    background-color: rgba(0, 0, 0, 0.2); /* Transparent background */
+    color: white;
+    padding: 40px;
+    text-align: left;
+    max-width: 650px;
+    margin: 0 auto 50px; /* Center section and add gap */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(225, 225, 225, 0.8);
+}
+
+.skills-section h2 {
+    font-size: 24px;
+    color: #FFD700;
+    margin-bottom: 20px;
+}
+
+.skills-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.skills-icons i {
+    font-size: 40px;
+    color: #FFFFFF;
+    transition: transform 0.3s;
+}
+
+.skills-icons i:hover {
+    transform: scale(1.2);
+}
+
+/* Coding Profiles Section */
+.coding-profiles-section {
+    background-color: rgba(0, 0, 0, 0.2); /* Transparent background */
+    color: white;
+    padding: 40px;
+    text-align: left;
+    max-width: 650px;
+    margin: 0 auto 50px; /* Center section and add gap */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(225, 225, 225, 0.8);
+    padding-bottom: 60px; /* Extra padding for bottom space */
+}
+
+.coding-profiles-section h2 {
+    font-size: 24px;
+    color: #FFD700;
+    margin-bottom: 20px;
+}
+
+.coding-profiles-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.coding-profiles-icons a {
+    font-size: 40px;
+    color: #FFFFFF;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.coding-profiles-icons a:hover {
+    color: #FFA500;
+    transform: scale(1.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .intro-section,
+    .skills-section,
+    .coding-profiles-section {
+        padding: 20px;
+    }
+
+    .intro-content h2 {
+        font-size: 24px;
+    }
+
+    .intro-content p {
+        font-size: 14px;
+    }
+
+    .skills-icons i,
+    .coding-profiles-icons a {
+        font-size: 30px;
+    }
+}
+/*experience-page */
+/* Experience Page Styles */
+#experience-page {
+    display: block;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.2); /* Adjust as needed */
+    color: white; /* Text color */
+    position: relative; /* Ensure position relative for absolute positioning */
+}
+
+/* Carousel styles */
+.carousel {
+    width: 100%; /* Ensure carousel takes full width */
+    max-width: 800px; /* Set maximum width */
+    height: 530px; /* Set fixed height for the carousel */
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds height */
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(225, 225, 225, 0.8);
+    position: relative; /* Ensure position relative for absolute positioning */
+}
+
+.carousel h2 {
+    font-size: 24px;
+    color: #FFD700;
+    margin-bottom: 10px;
+    text-align: left; /* Align header text to the left */
+}
+
+.carousel p {
+    line-height: 1.6;
+    color: #FFFFFF;
+    margin-bottom: 15px;
+    text-align: left; /* Align paragraph text to the left */
+}
+
+.carousel-controls {
+    position: fixed;
+    bottom: 110px; /* Adjust position as needed */
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Space controls evenly */
+    opacity: 0.8;
+    padding: 0 20px; /* Adjust padding for space around controls */
+}
+
+.carousel-controls button {
+    padding: 8px 20px;
+    background-color: #FFD700 ; /* Default background color */
+    color: #000;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.carousel-controls button:hover {
+    background-color: #FFA500; /* Background color on hover */
+}
+
+.carousel-indicators {
+    position: fixed;
+    bottom: 111px; /* Adjust position as needed */
+    left: 51.5%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+}
+
+.carousel-indicators .indicator,
+.carousel-indicators .experience-indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.carousel-indicators .active {
+    background-color:#FFD700;
+}
+
+/* Positioning Carousel Controls */
+#carousel-prev,
+#experience-carousel-prev {
+    position: absolute;
+    left: 30px; /* Adjust as needed */
+    bottom: 2px; /* Adjust as needed */
+}
+
+#carousel-next,
+#experience-carousel-next {
+    position: absolute;
+    left: 650px; /* Adjust as needed */
+    bottom: 2px; /* Adjust as needed */
+    z-index: 1000; /* Ensure next button is above other elements */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .carousel {
+        padding: 15px;
+    }
+    
+    .carousel h2 {
+        font-size: 20px;
+    }
+    
+    .carousel p {
+        font-size: 14px;
+    }
+    
+    .carousel-controls {
+        position: static;
+        transform: none;
+        margin-top: 15px;
+        justify-content: space-between; /* Space controls evenly */
+        width: 100%;
+        padding: 0 20px; /* Adjust padding for space around controls */
+    }
+    
+    .carousel-controls button {
+        margin-right: 10px; /* Add space between buttons */
+        margin-bottom: 0; /* Remove bottom margin for buttons */
+    }
+    
+    .carousel-indicators {
+        position: static;
+        transform: none;
+        margin-top: 10px;
+        text-align: center;
+        width: 100%;
+    }
+}

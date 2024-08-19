@@ -1,0 +1,22 @@
+* { margin:0; 
+    padding:0; }
+
+/* styles/background.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black; /* Fallback color */
+    background-image: inherit; /* Inherit animation from canvas */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Fixed background */
+}/* just to be sure these are full screen*/
+
+canvas { 
+   overflow: hidden;
+   width:100vw;
+   height:100vh;
+   background-color:black;
+}
