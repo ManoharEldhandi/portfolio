@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio for Manohar Eldhandi, a software engineer trainee building backend systems, AI/ML tools, and developer workflows."
+    />
+    <title>Manohar Eldhandi | Software Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&amp;family=Inter:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230d0d0f'/%3E%3Cpath d='M13 45V19h7l12 16 12-16h7v26h-7V29L34 43h-4L20 29v16z' fill='%23f7f7f2'/%3E%3C/svg%3E"
+    />
+  </head>
+  <body data-theme="dark">
+    <svg class="icon-sprite" aria-hidden="true">
+      <symbol id="icon-arrow" viewBox="0 0 24 24">
+        <path d="M5 12h14" />
+        <path d="m13 6 6 6-6 6" />
+      </symbol>
+      <symbol id="icon-code" viewBox="0 0 24 24">
+        <path d="m8 9-4 3 4 3" />
+        <path d="m16 9 4 3-4 3" />
+        <path d="m14 5-4 14" />
+      </symbol>
+      <symbol id="icon-brain" viewBox="0 0 24 24">
+        <path d="M9 3a4 4 0 0 0-4 4v1a4 4 0 0 0 0 8v1a4 4 0 0 0 7 2" />
+        <path d="M15 3a4 4 0 0 1 4 4v1a4 4 0 0 1 0 8v1a4 4 0 0 1-7 2" />
+        <path d="M12 5v14" />
+        <path d="M8 8h.01M16 8h.01M7 14h.01M17 14h.01" />
+      </symbol>
+      <symbol id="icon-database" viewBox="0 0 24 24">
+        <ellipse cx="12" cy="5" rx="7" ry="3" />
+        <path d="M5 5v14c0 1.66 3.13 3 7 3s7-1.34 7-3V5" />
+        <path d="M5 12c0 1.66 3.13 3 7 3s7-1.34 7-3" />
+      </symbol>
+      <symbol id="icon-shield" viewBox="0 0 24 24">
+        <path d="M12 3 20 7v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7z" />
+        <path d="m9 12 2 2 4-5" />
+      </symbol>
+      <symbol id="icon-route" viewBox="0 0 24 24">
+        <circle cx="6" cy="6" r="2" />
+        <circle cx="18" cy="18" r="2" />
+        <path d="M8 6h5a3 3 0 0 1 0 6H9a3 3 0 0 0 0 6h7" />
+      </symbol>
+      <symbol id="icon-droplet" viewBox="0 0 24 24">
+        <path d="M12 3s7 7.2 7 12a7 7 0 1 1-14 0c0-4.8 7-12 7-12z" />
+        <path d="M9 16a3 3 0 0 0 4 2.8" />
+      </symbol>
+      <symbol id="icon-activity" viewBox="0 0 24 24">
+        <path d="M3 12h4l3-8 4 16 3-8h4" />
+      </symbol>
+      <symbol id="icon-trophy" viewBox="0 0 24 24">
+        <path d="M8 21h8" />
+        <path d="M12 17v4" />
+        <path d="M7 4h10v5a5 5 0 0 1-10 0z" />
+        <path d="M7 6H4v2a4 4 0 0 0 4 4" />
+        <path d="M17 6h3v2a4 4 0 0 1-4 4" />
+      </symbol>
+      <symbol id="icon-terminal" viewBox="0 0 24 24">
+        <path d="m4 7 5 5-5 5" />
+        <path d="M12 19h8" />
+      </symbol>
+      <symbol id="icon-mail" viewBox="0 0 24 24">
+        <path d="M4 6h16v12H4z" />
+        <path d="m4 7 8 6 8-6" />
+      </symbol>
+      <symbol id="icon-github" viewBox="0 0 24 24">
+        <path d="M9 19c-5 1.5-5-2.5-7-3" />
+        <path d="M15 22v-3.9a3.4 3.4 0 0 0-.9-2.6c3-.3 6.1-1.5 6.1-6.6a5.1 5.1 0 0 0-1.4-3.6 4.8 4.8 0 0 0-.1-3.6s-1.1-.3-3.7 1.4a12.8 12.8 0 0 0-6.7 0C5.7.9 4.6 1.2 4.6 1.2a4.8 4.8 0 0 0-.1 3.6A5.1 5.1 0 0 0 3.1 8.4c0 5.1 3.1 6.3 6.1 6.6a3.4 3.4 0 0 0-.9 2.6V22" />
+      </symbol>
+      <symbol id="icon-linkedin" viewBox="0 0 24 24">
+        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V9h4v2" />
+        <path d="M2 9h4v12H2z" />
+        <circle cx="4" cy="4" r="2" />
+      </symbol>
+      <symbol id="icon-java" viewBox="0 0 24 24">
+        <path d="M8 18c1.4.8 6.6.8 8 0" />
+        <path d="M7 15c2 1 8 1 10 0" />
+        <path d="M8 12h8v3c0 2-8 2-8 0z" />
+        <path d="M10 9c-1.2-1.4 2.2-2.2.8-4" />
+        <path d="M14 9c-1.2-1.4 2.2-2.2.8-4" />
+      </symbol>
+      <symbol id="icon-python" viewBox="0 0 24 24">
+        <path d="M12 3h3a4 4 0 0 1 4 4v3H9a4 4 0 0 0-4 4v1" />
+        <path d="M12 21H9a4 4 0 0 1-4-4v-3h10a4 4 0 0 0 4-4V9" />
+        <path d="M11 6h.01M13 18h.01" />
+      </symbol>
+      <symbol id="icon-leaf" viewBox="0 0 24 24">
+        <path d="M20 4c-8 0-13 4-13 11a5 5 0 0 0 5 5c7 0 8-8 8-16z" />
+        <path d="M4 20c3-7 8-10 15-12" />
+      </symbol>
+      <symbol id="icon-bolt" viewBox="0 0 24 24">
+        <path d="M13 2 4 14h7l-1 8 10-13h-7z" />
+      </symbol>
+      <symbol id="icon-nodes" viewBox="0 0 24 24">
+        <circle cx="6" cy="12" r="3" />
+        <circle cx="18" cy="6" r="3" />
+        <circle cx="18" cy="18" r="3" />
+        <path d="m8.7 10.7 6.6-3.4M8.7 13.3l6.6 3.4" />
+      </symbol>
+      <symbol id="icon-docker" viewBox="0 0 24 24">
+        <path d="M4 12h16c-.4 4-3.4 7-8 7-4.5 0-7.2-2.5-8-7z" />
+        <path d="M7 9h3v3H7zM10 9h3v3h-3zM13 9h3v3h-3zM10 6h3v3h-3z" />
+      </symbol>
+      <symbol id="icon-branch" viewBox="0 0 24 24">
+        <circle cx="6" cy="5" r="2" />
+        <circle cx="18" cy="6" r="2" />
+        <circle cx="18" cy="18" r="2" />
+        <path d="M8 5h4a4 4 0 0 1 4 4v7M6 7v12" />
+      </symbol>
+      <symbol id="icon-cloud" viewBox="0 0 24 24">
+        <path d="M7 18h10a4 4 0 0 0 .5-8 6 6 0 0 0-11.2 2A3 3 0 0 0 7 18z" />
+      </symbol>
+    </svg>
+
+    <div class="cursor-halo" data-cursor-halo aria-hidden="true"></div>
+
+    <div class="page-layer page-layer-active theme-dark" data-theme-layer="active">
+      <div class="progress-pill magnetic" aria-hidden="true">
+        <span class="progress-fill"></span>
+        <span class="progress-value" data-scroll-percent>0%</span>
+      </div>
+
+      <header class="site-header" id="top">
+        <a class="brand magnetic" href="#top" aria-label="Manohar Eldhandi home">
+          <strong>Manohar Eldhandi</strong>
+        </a>
+
+        <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+          <a class="nav-link magnetic" href="#about">About</a>
+          <a class="nav-link magnetic" href="#experience">Experience</a>
+          <a class="nav-link magnetic" href="#projects">Projects</a>
+          <a class="nav-link magnetic" href="#skills">Skills</a>
+          <a class="nav-link magnetic" href="#proof">Proof</a>
+          <a class="nav-link magnetic" href="#contact">Contact</a>
+        </nav>
+
+        <button
+          class="menu-toggle magnetic"
+          type="button"
+          aria-controls="primary-nav"
+          aria-expanded="false"
+          data-menu-toggle
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span class="sr-only">Open menu</span>
+        </button>
+      </header>
+
+      <main>
+        <section class="hero section" aria-labelledby="hero-title">
+          <div class="hero-grid">
+            <div class="hero-copy" data-reveal data-animate="rise">
+              <p class="eyebrow">
+                <svg class="icon" aria-hidden="true"><use href="#icon-terminal"></use></svg>
+                Software Engineer Trainee / Cisco / Bengaluru
+              </p>
+              <h1 id="hero-title" data-split-text>Manohar Eldhandi</h1>
+              <p class="hero-role">Developer building backend systems and AI/ML tools for real product problems.</p>
+              <p class="hero-lede">
+                I turn messy problems into usable software: clean APIs, practical models,
+                and developer workflows that are simple to understand, ship, and improve.
+                I am growing toward backend and AI/ML engineering roles where the work
+                reaches real users.
+              </p>
+              <div class="hero-actions" aria-label="Hero actions">
+                <a class="button button-primary magnetic" href="#projects">
+                  <span>See the builds</span>
+                  <svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg>
+                </a>
+                <a class="button button-secondary magnetic" href="mailto:manohar.eldhandi@outlook.com">
+                  <span>Start a conversation</span>
+                  <svg class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg>
+                </a>
+              </div>
+            </div>
+
+            <aside class="hero-system" aria-label="Current engineering profile" data-reveal data-animate="scale">
+              <div class="hero-profile magnetic">
+                <div class="profile-topline">
+                  <span class="profile-status">Now building</span>
+                  <span>Bengaluru</span>
+                </div>
+
+                <p class="profile-title">Cisco Software Engineer Trainee</p>
+                <p class="profile-summary">
+                  At Cisco, I am learning how product teams build and ship reliable
+                  software while contributing to internal developer tooling with Python,
+                  APIs, LLM workflows, and automation.
+                </p>
+
+                <div class="profile-lanes">
+                  <article>
+                    <span>Current role</span>
+                    <strong>Software Engineer Trainee at Cisco</strong>
+                    <p>Building internal developer tooling with backend services, APIs, and AI-assisted workflows.</p>
+                  </article>
+                  <article>
+                    <span>Building with</span>
+                    <strong>Python / Java / APIs / AI/ML</strong>
+                    <p>LLM workflows, LangGraph, RAG context, MCP integrations, databases, Git, and CI/CD.</p>
+                  </article>
+                  <article>
+                    <span>Learning at work</span>
+                    <strong>Product engineering at scale</strong>
+                    <p>Code reviews, design tradeoffs, reliability, releases, and how large teams take software from idea to production.</p>
+                  </article>
+                </div>
+
+                <div class="profile-stack" aria-label="Core stack">
+                  <span>Python</span>
+                  <span>Java</span>
+                  <span>REST APIs</span>
+                  <span>MCP</span>
+                  <span>LangGraph</span>
+                  <span>RAG</span>
+                  <span>AWS</span>
+                  <span>CI/CD</span>
+                </div>
+              </div>
+            </aside>
+          </div>
+
+          <div class="signal-strip" aria-label="Credibility highlights" data-reveal data-animate="clip">
+            <div class="signal-track">
+              <span>CodeChef 3 star</span>
+              <span>Codeforces 1400+</span>
+              <span>LeetCode 500+</span>
+              <span>Smart Coder top 2%</span>
+              <span>Smart Interviews rank #937 / 42,994</span>
+              <span>150+ DSA students mentored</span>
+              <span>Amazon ML Summer School 2024</span>
+              <span>Cisco WebEx Playtime Hackathon</span>
+              <span>AWS / OCI / Palo Alto credentials</span>
+              <span aria-hidden="true">CodeChef 3 star</span>
+              <span aria-hidden="true">Codeforces 1400+</span>
+              <span aria-hidden="true">LeetCode 500+</span>
+              <span aria-hidden="true">Smart Coder top 2%</span>
+              <span aria-hidden="true">Smart Interviews rank #937 / 42,994</span>
+              <span aria-hidden="true">150+ DSA students mentored</span>
+              <span aria-hidden="true">Amazon ML Summer School 2024</span>
+              <span aria-hidden="true">Cisco WebEx Playtime Hackathon</span>
+              <span aria-hidden="true">AWS / OCI / Palo Alto credentials</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="section intro-section" id="about" data-section>
+          <div class="section-heading" data-reveal data-animate="rise">
+            <p class="eyebrow">
+              <svg class="icon" aria-hidden="true"><use href="#icon-brain"></use></svg>
+              About
+            </p>
+            <h2>A developer who learns fast, builds clearly, and owns the outcome.</h2>
+          </div>
+
+          <div class="intro-grid">
+            <div class="intro-statement" data-reveal data-animate="rise">
+              <p>
+                I am a Computer Science graduate and Cisco Software Engineer Trainee
+                who enjoys building useful software: backend APIs, data-driven features,
+                AI/ML workflows, and tools that make engineering work easier without
+                making the system messy.
+              </p>
+              <p>
+                What makes me a strong hire is the mix of fundamentals and ownership. I
+                can pick up a new codebase, ask the right questions, debug patiently, and
+                turn unclear requirements into working software that another engineer can
+                review, trust, and build on.
+              </p>
+            </div>
+
+            <div class="capability-grid" aria-label="What I bring">
+              <article class="capability-card magnetic" data-reveal data-animate="tilt">
+                <svg class="icon" aria-hidden="true"><use href="#icon-code"></use></svg>
+                <h3>Builder mindset</h3>
+                <p>I like taking an idea from rough requirement to usable software, with clear API and data flow decisions.</p>
+              </article>
+              <article class="capability-card magnetic" data-reveal data-animate="tilt">
+                <svg class="icon" aria-hidden="true"><use href="#icon-route"></use></svg>
+                <h3>Backend depth</h3>
+                <p>I think in APIs, data models, permissions, edge cases, and handoff, so the backend is understandable beyond just working once.</p>
+              </article>
+              <article class="capability-card magnetic" data-reveal data-animate="tilt">
+                <svg class="icon" aria-hidden="true"><use href="#icon-brain"></use></svg>
+                <h3>Practical AI/ML</h3>
+                <p>I use AI and ML as engineering tools: to classify, predict, automate, and support decisions with outputs people can check.</p>
+              </article>
+              <article class="capability-card magnetic" data-reveal data-animate="tilt">
+                <svg class="icon" aria-hidden="true"><use href="#icon-activity"></use></svg>
+                <h3>Why hire me</h3>
+                <p>I learn quickly, communicate clearly, handle feedback well, and care about code that stays readable after handoff.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="experience" data-section>
+          <div class="section-heading compact" data-reveal data-animate="rise">
+            <p class="eyebrow">
+              <svg class="icon" aria-hidden="true"><use href="#icon-route"></use></svg>
+              Experience
+            </p>
+            <h2>Where I learned to build, explain, and improve.</h2>
+          </div>
+
+          <div class="timeline" aria-label="Experience timeline">
+            <article class="timeline-card magnetic" data-reveal data-animate="line">
+              <div class="timeline-date">Oct 2025 - Present</div>
+              <div class="timeline-content">
+                <p class="role-meta">Cisco / Bengaluru</p>
+                <h3>Software Engineer Trainee</h3>
+                <p>
+                  Working inside a product-company engineering environment, building
+                  internal developer tooling with backend services, APIs, and LLM-assisted
+                  workflows. This role is teaching me how real teams read existing
+                  systems, ship carefully, debug releases, and keep software maintainable.
+                </p>
+                <ul class="detail-list">
+                  <li>Contributed to tooling that reduced manual review effort by about 60%.</li>
+                  <li>Built with Python, APIs, LangGraph, MCP integrations, RAG context, and CI/CD workflows.</li>
+                  <li>Learning production habits around code review, release cycles, reliability, and clean handoff.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="timeline-card magnetic" data-reveal data-animate="line">
+              <div class="timeline-date">Feb 2024 - Jun 2024</div>
+              <div class="timeline-content">
+                <p class="role-meta">Smart Interviews</p>
+                <h3>DSA Mentor</h3>
+                <p>
+                  Mentored juniors in DSA by helping them understand patterns instead of
+                  memorizing solutions. The work improved how I explain logic, break down
+                  problems, and guide someone from confusion to a clean implementation.
+                </p>
+                <ul class="detail-list">
+                  <li>Guided 150+ students through debugging, optimization, and interview-style problem solving.</li>
+                  <li>Ranked #937 out of 42,994 participants and earned Smart Coder top 2% recognition.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="timeline-card magnetic" data-reveal data-animate="line">
+              <div class="timeline-date">Dec 2021 - Jul 2025</div>
+              <div class="timeline-content">
+                <p class="role-meta">CMR Institute of Technology / JNTU Hyderabad</p>
+                <h3>B.Tech, CSE with AI and ML</h3>
+                <p>
+                  Built the foundation I still rely on: DSA, OOP, DBMS, operating
+                  systems, computer networks, software engineering, and applied machine
+                  learning. College gave me the base; projects and internships made it
+                  practical.
+                </p>
+                <ul class="detail-list">
+                  <li>Graduated with an 8.48 CGPA in Computer Science with AI and ML.</li>
+                  <li>Used coursework and projects to connect backend engineering with data and ML systems.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section projects-section" id="projects" data-section>
+          <div class="section-heading compact" data-reveal data-animate="rise">
+            <div>
+              <p class="eyebrow">
+                <svg class="icon" aria-hidden="true"><use href="#icon-code"></use></svg>
+                Selected builds
+              </p>
+              <h2>Projects that show how I think and build.</h2>
+            </div>
+          </div>
+
+          <div class="project-gallery">
+            <article class="project-card featured magnetic" data-reveal data-animate="tilt">
+              <div class="project-mark">
+                <svg class="icon" aria-hidden="true"><use href="#icon-route"></use></svg>
+                <span>01</span>
+              </div>
+              <p class="project-type">Backend platform</p>
+              <h3>OnTheWay - Backend for Route-Aware Ordering</h3>
+              <div class="project-body">
+                <p>
+                  My strongest backend build: a Spring Boot platform for ordering ahead
+                  from merchants on a user's route. I modeled users, merchants, menus,
+                  orders, payments, preferences, and locations as connected API flows
+                  instead of isolated screens.
+                </p>
+                <p>
+                  I focused on the parts that make a backend feel production-ready:
+                  JWT/RBAC, DTO separation, centralized errors, MySQL persistence, Swagger
+                  docs, and controller/service boundaries that another developer can
+                  understand without reverse-engineering the code.
+                </p>
+              </div>
+              <div class="project-stats">
+                <span>27 REST endpoints</span>
+                <span>8 controllers</span>
+                <span>JWT + RBAC</span>
+                <span>MySQL</span>
+                <span>Swagger docs</span>
+              </div>
+              <a href="https://github.com/ManoharEldhandi/ontheway-backend" target="_blank" rel="noreferrer">
+                GitHub repo
+                <svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg>
+              </a>
+            </article>
+
+            <article class="project-card magnetic" data-reveal data-animate="tilt">
+              <div class="project-mark">
+                <svg class="icon" aria-hidden="true"><use href="#icon-droplet"></use></svg>
+                <span>02</span>
+              </div>
+              <p class="project-type">ML web app</p>
+              <h3>WaterNet - Water Potability Platform</h3>
+              <div class="project-body">
+                <p>
+                  A Django app that turns water-quality prediction into a usable workflow:
+                  collect the inputs, store predictions, compare models, and show admins
+                  clearer potability results instead of leaving the work inside a notebook.
+                </p>
+              </div>
+              <div class="project-stats">
+                <span>9 water inputs</span>
+                <span>Django + MySQL</span>
+                <span>model comparison</span>
+              </div>
+              <a href="https://github.com/ManoharEldhandi/WaterNet" target="_blank" rel="noreferrer">
+                GitHub repo
+                <svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg>
+              </a>
+            </article>
+
+            <article class="project-card magnetic" data-reveal data-animate="tilt">
+              <div class="project-mark">
+                <svg class="icon" aria-hidden="true"><use href="#icon-brain"></use></svg>
+                <span>03</span>
+              </div>
+              <p class="project-type">ML challenge</p>
+              <h3>Smart Water Monitoring - Consumption Forecasting</h3>
+              <div class="project-body">
+                <p>
+                  A forecasting project where the main work was discipline: time features,
+                  missing-value handling, encoding, scaling, XGBoost training, and a
+                  submission flow that could be rerun without manual guesswork.
+                </p>
+              </div>
+              <div class="project-stats">
+                <span>XGBoost model</span>
+                <span>time features</span>
+                <span>reusable submission</span>
+              </div>
+              <a href="https://github.com/ManoharEldhandi/HackerEarth-Machine-Learning-challenge--World-Water-Day" target="_blank" rel="noreferrer">
+                GitHub repo
+                <svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg>
+              </a>
+            </article>
+          </div>
+
+        </section>
+
+        <section class="section" id="skills" data-section>
+          <div class="section-heading compact" data-reveal data-animate="rise">
+            <div>
+              <p class="eyebrow">
+                <svg class="icon" aria-hidden="true"><use href="#icon-database"></use></svg>
+                Skills
+              </p>
+              <h2>A stack built around systems that ship.</h2>
+            </div>
+          </div>
+
+          <div class="skills-solar magnetic" aria-label="Animated skill orbit" data-reveal data-animate="scale">
+            <div class="skills-core">
+              <strong>AI &amp;<br />Backend</strong>
+            </div>
+
+            <div class="orbit-track orbit-track-one" aria-label="Backend skills">
+              <span class="skill-node" style="--a: 0deg"><span class="skill-node-inner"><svg class="icon" aria-hidden="true"><use href="#icon-java"></use></svg><strong>Java</strong></span></span>
+              <span class="skill-node" style="--a: 60deg"><span class="skill-node-inner"><svg class="icon" aria-hidden="true"><use href="#icon-python"></use></svg><strong>Python</strong></span></span>
+              <span class="skill-node" style="--a: 120deg"><span class="skill-node-inner"><svg class="icon" aria-hidden="true"><use href="#icon-leaf"></use></svg><strong>Spring</strong></span></span>
+              <span class="skill-node" style="--a: 180deg"><span class="skill-node-inner"><svg class="icon" aria-hidden="true"><use href="#icon-code"></use></svg><strong>Django</strong></span></span>
+              <span class="skill-node" style="--a: 240deg"><span class="skill-node-inner"><svg class="icon" aria-hidden="true"><use href="#icon-route"></use></svg><strong>REST</strong></span></span>
+              <span class="skill-node" style="--a: 300deg"><span class="skill-node-inner"><svg class="icon" aria-hidden="true"><use href="#icon-database"></use></svg><strong>MySQL</strong></span></span>
+            </div>
+
+            <div class="orbit-track orbit-track-two" aria-label="AI and ML skills">
+              <span class="skill-node" style="--a: 0deg"><span class="skill-node-inner"><svg class="icon" aria-hidden="true"><use href="#icon-nodes"></use></svg><strong>LangGraph</strong></span></span>
+              <span class="skill-node" style="--a: 60deg"><span class="skill-node-inner"><svg class="icon" aria-hidden="true"><use href="#icon-brain"></use></svg><strong>RAG</strong></span></span>
+              <span class="skill-node" style="--a: 120deg"><span class="skill-node-inner"><svg class="icon" aria-hidden="true"><use href="#icon-terminal"></use></svg><strong>MCP</strong></span></span>
+              <span class="skill-node" style="--a: 180deg"><span class="skill-node-inner"><svg class="icon" aria-hidden="true"><use href="#icon-database"></use></svg><strong>sklearn</strong></span></span>
+              <span class="skill-node" style="--a: 240deg"><span class="skill-node-inner"><svg class="icon" aria-hidden="true"><use href="#icon-activity"></use></svg><strong>XGBoost</strong></span></span>
+              <span class="skill-node" style="--a: 300deg"><span class="skill-node-inner"><svg class="icon" aria-hidden="true"><use href="#icon-shield"></use></svg><strong>LLMs</strong></span></span>
+            </div>
+
+            <div class="orbit-track orbit-track-three" aria-label="Shipping tools">
+              <span class="skill-node" style="--a: 0deg"><span class="skill-node-inner"><svg class="icon" aria-hidden="true"><use href="#icon-branch"></use></svg><strong>Git</strong></span></span>
+              <span class="skill-node" style="--a: 60deg"><span class="skill-node-inner"><svg class="icon" aria-hidden="true"><use href="#icon-docker"></use></svg><strong>Docker</strong></span></span>
+              <span class="skill-node" style="--a: 120deg"><span class="skill-node-inner"><svg class="icon" aria-hidden="true"><use href="#icon-cloud"></use></svg><strong>AWS</strong></span></span>
+              <span class="skill-node" style="--a: 180deg"><span class="skill-node-inner"><svg class="icon" aria-hidden="true"><use href="#icon-activity"></use></svg><strong>CI/CD</strong></span></span>
+              <span class="skill-node" style="--a: 240deg"><span class="skill-node-inner"><svg class="icon" aria-hidden="true"><use href="#icon-route"></use></svg><strong>Swagger</strong></span></span>
+              <span class="skill-node" style="--a: 300deg"><span class="skill-node-inner"><svg class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg><strong>Postman</strong></span></span>
+            </div>
+          </div>
+        </section>
+
+        <section class="section proof-section" id="proof" data-section>
+          <div class="section-heading compact" data-reveal data-animate="rise">
+            <p class="eyebrow">
+              <svg class="icon" aria-hidden="true"><use href="#icon-trophy"></use></svg>
+              Proof
+            </p>
+            <h2>Proof that the work is not just words.</h2>
+          </div>
+
+          <div class="proof-grid">
+            <article class="proof-card magnetic" data-reveal data-animate="scale">
+              <span>Problem solving</span>
+              <h3>CodeChef 3 star, Codeforces 1400+, LeetCode 500+</h3>
+              <p>Consistent DSA and contest practice that shows up in how I handle constraints, edge cases, debugging, and clean logic.</p>
+            </article>
+            <article class="proof-card magnetic" data-reveal data-animate="scale">
+              <span>Top 2%</span>
+              <h3>Smart Coder recognition</h3>
+              <p>Ranked #937 out of 42,994 on Smart Interviews and earned national top 2% recognition through sustained problem solving.</p>
+            </article>
+            <article class="proof-card magnetic" data-reveal data-animate="scale">
+              <span>Mentoring</span>
+              <h3>150+ students guided in DSA</h3>
+              <p>Mentoring juniors made me better at explaining tradeoffs, breaking down problems, reviewing code, and communicating clearly.</p>
+            </article>
+            <article class="proof-card magnetic" data-reveal data-animate="scale">
+              <span>ML</span>
+              <h3>Amazon ML Summer School 2024</h3>
+              <p>Advanced ML training that strengthened my understanding of modeling, evaluation, and how to think beyond just running a library.</p>
+            </article>
+            <article class="proof-card magnetic" data-reveal data-animate="scale">
+              <span>Build under pressure</span>
+              <h3>Cisco WebEx Playtime Hackathon</h3>
+              <p>Built an AI-assisted security compliance idea around code analysis and workflow automation in a fast, team-driven setting.</p>
+            </article>
+            <article class="proof-card magnetic" data-reveal data-animate="scale">
+              <span>Credentials</span>
+              <h3>Cloud, AI, security, and SQL foundations</h3>
+              <p>AWS, OCI AI/GenAI, Palo Alto cloud security, Snowflake, and HackerRank credentials that support the backend and AI/ML direction.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section contact-section" id="contact" data-section>
+          <div class="contact-card" data-reveal data-animate="clip">
+            <div>
+              <p class="eyebrow">
+                <svg class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg>
+                Contact
+              </p>
+              <h2>Looking for a developer who can build clearly and learn fast?</h2>
+              <p>
+                I am open to software engineering conversations around backend APIs,
+                AI/ML tools, developer workflows, and product teams where ownership,
+                clarity, and steady growth matter.
+              </p>
+            </div>
+            <div class="contact-links" aria-label="Contact links">
+              <a class="magnetic" href="mailto:manohar.eldhandi@outlook.com">
+                <svg class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg>
+                <span>Email me</span>
+                <strong>manohar.eldhandi@outlook.com</strong>
+              </a>
+              <a class="magnetic" href="https://github.com/ManoharEldhandi" target="_blank" rel="noreferrer">
+                <svg class="icon" aria-hidden="true"><use href="#icon-github"></use></svg>
+                <span>See the code</span>
+                <strong>github.com/ManoharEldhandi</strong>
+              </a>
+              <a class="magnetic" href="https://www.linkedin.com/in/manohar-eldhandi/" target="_blank" rel="noreferrer">
+                <svg class="icon" aria-hidden="true"><use href="#icon-linkedin"></use></svg>
+                <span>Connect professionally</span>
+                <strong>linkedin.com/in/manohar-eldhandi</strong>
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>&copy; 2026 Manohar Eldhandi</p>
+        <a href="#top" data-back-top>Back to top</a>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
