@@ -1,0 +1,25 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# Editor / IDE
+.idea/
+.vscode/
+*.swp
+*~
+
+# Node / build tooling
+node_modules/
+dist/
+.cache/
+npm-debug.log*
+yarn-error.log*
+
+# Logs
+*.log
