@@ -37,7 +37,9 @@ const sections = [...activeLayer.querySelectorAll("[data-section]")];
 const revealItems = [...activeLayer.querySelectorAll("[data-reveal]")];
 const backTopLinks = [...activeLayer.querySelectorAll("[data-back-top]")];
 const magneticItems = [...activeLayer.querySelectorAll(".magnetic")];
+const interactiveItems = [...activeLayer.querySelectorAll("a, button")];
 const progressLabels = [...activeLayer.querySelectorAll("[data-scroll-percent]")];
+const cursorHalo = document.querySelector("[data-cursor-halo]");
 
 function syncClass(element, className, force) {
   element.classList.toggle(className, force);
@@ -45,6 +47,12 @@ function syncClass(element, className, force) {
 
 function syncStyle(element, name, value) {
   element.style.setProperty(name, value);
+}
+
+function setInteractiveCursor(isInteractive) {
+  if (cursorHalo) {
+    syncClass(cursorHalo, "is-interactive", isInteractive);
+  }
 }
 
 const savedCursor = (() => {
@@ -219,6 +227,12 @@ magneticItems.forEach((item) => {
   item.addEventListener("pointermove", updateMagneticPosition);
   item.addEventListener("pointerenter", () => syncClass(item, "is-hovered", true));
   item.addEventListener("pointerleave", resetMagneticPosition);
+});
+
+interactiveItems.forEach((item) => {
+  item.addEventListener("pointerenter", () => setInteractiveCursor(true));
+  item.addEventListener("pointerleave", () => setInteractiveCursor(false));
+  item.addEventListener("pointercancel", () => setInteractiveCursor(false));
 });
 
 const pointerMoveEvent = "onpointerrawupdate" in window ? "pointerrawupdate" : "pointermove";
