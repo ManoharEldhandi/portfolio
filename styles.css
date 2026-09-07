@@ -206,8 +206,7 @@ svg {
   will-change: transform;
 }
 
-.cursor-halo::before,
-.cursor-halo::after {
+.cursor-halo::before {
   position: absolute;
   content: "";
   pointer-events: none;
@@ -230,30 +229,10 @@ svg {
   mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 0);
 }
 
-.cursor-halo::after {
-  top: -14px;
-  right: -15px;
-  width: 16px;
-  height: 16px;
-  background:
-    linear-gradient(45deg, transparent 42%, #ffffff 43% 57%, transparent 58%);
-  border-top: 3px solid #ffffff;
-  border-right: 3px solid #ffffff;
-  transform: translate(-7px, 7px) scale(0.55);
-  transition:
-    opacity 150ms ease,
-    transform 220ms var(--ease);
-}
-
 .cursor-halo.is-interactive::before {
   opacity: 0.92;
   transform: scale(1) rotate(0deg);
   animation: halo-link-orbit 3.2s linear infinite;
-}
-
-.cursor-halo.is-interactive::after {
-  opacity: 1;
-  transform: translate(0, 0) scale(1);
 }
 
 .page-layer {
