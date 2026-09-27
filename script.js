@@ -39,7 +39,15 @@ const backTopLinks = [...activeLayer.querySelectorAll("[data-back-top]")];
 const magneticItems = [...activeLayer.querySelectorAll(".magnetic")];
 const interactiveItems = [...activeLayer.querySelectorAll("a, button")];
 const progressLabels = [...activeLayer.querySelectorAll("[data-scroll-percent]")];
+const progressPill = activeLayer.querySelector(".progress-pill");
+const signalStrip = activeLayer.querySelector(".signal-strip");
+const skillsSolar = activeLayer.querySelector(".skills-solar");
 const cursorHalo = document.querySelector("[data-cursor-halo]");
+const supportsFinePointer = window.matchMedia("(pointer: fine)").matches;
+const supportsHoverMotion =
+  supportsFinePointer &&
+  window.matchMedia("(prefers-reduced-motion: no-preference)").matches;
+const supportsIntersectionObserver = "IntersectionObserver" in window;
 
 function syncClass(element, className, force) {
   element.classList.toggle(className, force);
@@ -88,7 +96,7 @@ function setActiveSection(id) {
 function updateScrollProgress() {
   const max = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
   const progress = Math.max(0, Math.min(window.scrollY / max, 1));
-  root.style.setProperty("--scroll", String(progress));
+  progressPill?.style.setProperty("--scroll", String(progress));
   progressLabels.forEach((label) => {
     label.textContent = `${Math.round(progress * 100)}%`;
   });
@@ -117,14 +125,16 @@ function saveCursorPosition() {
 
 function applyPointerFrame() {
   pendingFrame = 0;
-  root.style.setProperty("--halo-x", `${lastClientX}px`);
-  root.style.setProperty("--halo-y", `${lastClientY}px`);
+  cursorHalo?.style.setProperty(
+    "transform",
+    `translate3d(calc(${lastClientX}px - var(--halo-radius)), calc(${lastClientY}px - var(--halo-radius)), 0)`,
+  );
 }
 
 function applyScrollFrame() {
   pendingScrollFrame = 0;
   updateScrollProgress();
-  updateActiveSection();
+  if (!supportsIntersectionObserver) updateActiveSection();
 }
 
 function queuePointerFrame() {
@@ -156,16 +166,22 @@ function queueScrollFrame() {
 }
 
 function handlePointerMove(event) {
-  if (!event.pointerType || event.pointerType !== "touch") {
-    setHaloPosition(event.clientX, event.clientY);
-  }
+  setHaloPosition(event.clientX, event.clientY);
 }
 
-function updateMagneticPosition(event) {
-  const item = event.currentTarget;
+let pendingMagneticFrame = 0;
+let activeMagneticItem = null;
+let magneticClientX = 0;
+let magneticClientY = 0;
+
+function applyMagneticFrame() {
+  pendingMagneticFrame = 0;
+  const item = activeMagneticItem;
+  if (!item) return;
+
   const rect = item.getBoundingClientRect();
-  const x = event.clientX - rect.left;
-  const y = event.clientY - rect.top;
+  const x = magneticClientX - rect.left;
+  const y = magneticClientY - rect.top;
   const mx = `${(x / rect.width) * 100}%`;
   const my = `${(y / rect.height) * 100}%`;
 
@@ -173,7 +189,7 @@ function updateMagneticPosition(event) {
   syncStyle(item, "--my", my);
   syncClass(item, "is-hovered", true);
 
-  if (item.matches(".brand, .menu-toggle")) {
+  if (item.matches(".menu-toggle")) {
     const moveX = ((x / rect.width) - 0.5) * 5;
     const moveY = ((y / rect.height) - 0.5) * 5;
     const translate = `${moveX}px ${moveY}px`;
@@ -181,8 +197,19 @@ function updateMagneticPosition(event) {
   }
 }
 
+function updateMagneticPosition(event) {
+  activeMagneticItem = event.currentTarget;
+  magneticClientX = event.clientX;
+  magneticClientY = event.clientY;
+
+  if (!pendingMagneticFrame) {
+    pendingMagneticFrame = window.requestAnimationFrame(applyMagneticFrame);
+  }
+}
+
 function resetMagneticPosition(event) {
   const item = event.currentTarget;
+  if (activeMagneticItem === item) activeMagneticItem = null;
   syncClass(item, "is-hovered", false);
   item.style.translate = "";
 }
@@ -223,23 +250,23 @@ backTopLinks.forEach((link) => {
   });
 });
 
-magneticItems.forEach((item) => {
-  item.addEventListener("pointermove", updateMagneticPosition);
-  item.addEventListener("pointerenter", () => syncClass(item, "is-hovered", true));
-  item.addEventListener("pointerleave", resetMagneticPosition);
-});
+if (supportsHoverMotion) {
+  magneticItems.forEach((item) => {
+    item.addEventListener("pointermove", updateMagneticPosition);
+    item.addEventListener("pointerenter", () => syncClass(item, "is-hovered", true));
+    item.addEventListener("pointerleave", resetMagneticPosition);
+  });
+}
 
-interactiveItems.forEach((item) => {
-  item.addEventListener("pointerenter", () => setInteractiveCursor(true));
-  item.addEventListener("pointerleave", () => setInteractiveCursor(false));
-  item.addEventListener("pointercancel", () => setInteractiveCursor(false));
-});
+if (supportsFinePointer) {
+  interactiveItems.forEach((item) => {
+    item.addEventListener("pointerenter", () => setInteractiveCursor(true));
+    item.addEventListener("pointerleave", () => setInteractiveCursor(false));
+    item.addEventListener("pointercancel", () => setInteractiveCursor(false));
+  });
 
-const pointerMoveEvent = "onpointerrawupdate" in window ? "pointerrawupdate" : "pointermove";
-window.addEventListener(pointerMoveEvent, handlePointerMove, { passive: true });
-
-if (pointerMoveEvent !== "pointermove") {
-  window.addEventListener("pointermove", handlePointerMove, { passive: true });
+  const pointerMoveEvent = "onpointerrawupdate" in window ? "pointerrawupdate" : "pointermove";
+  window.addEventListener(pointerMoveEvent, handlePointerMove, { passive: true });
 }
 
 window.addEventListener(
@@ -251,17 +278,19 @@ window.addEventListener(
 );
 
 window.addEventListener("resize", () => {
-  syncPointerFrame(
-    Math.min(lastClientX, window.innerWidth),
-    Math.min(lastClientY, window.innerHeight),
-  );
+  if (supportsFinePointer) {
+    syncPointerFrame(
+      Math.min(lastClientX, window.innerWidth),
+      Math.min(lastClientY, window.innerHeight),
+    );
+  }
   updateScrollProgress();
   updateActiveSection();
 });
 
 window.addEventListener("pageshow", () => {
   clearHashAndReturnHome();
-  syncPointerFrame();
+  if (supportsFinePointer) syncPointerFrame();
   updateScrollProgress();
   updateActiveSection();
 });
@@ -274,7 +303,7 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-if (window.IntersectionObserver) {
+if (supportsIntersectionObserver) {
   const revealObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -309,10 +338,22 @@ if (window.IntersectionObserver) {
   );
 
   sections.forEach((section) => sectionObserver.observe(section));
+
+  const motionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        syncClass(entry.target, "is-in-view", entry.isIntersecting);
+      });
+    },
+    { threshold: 0.01 },
+  );
+
+  [signalStrip, skillsSolar].filter(Boolean).forEach((item) => motionObserver.observe(item));
 } else {
   revealItems.forEach((item) => syncClass(item, "is-visible", true));
+  [signalStrip, skillsSolar].filter(Boolean).forEach((item) => syncClass(item, "is-in-view", true));
 }
 
-syncPointerFrame();
+if (supportsFinePointer) syncPointerFrame();
 updateScrollProgress();
 updateActiveSection();
