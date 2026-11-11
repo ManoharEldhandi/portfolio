@@ -89,7 +89,13 @@ function setMenu(isOpen) {
 
 function setActiveSection(id) {
   allNavLinks.forEach((link) => {
-    link.classList.toggle("is-active", link.getAttribute("href") === `#${id}`);
+    const isActive = link.getAttribute("href") === `#${id}`;
+    link.classList.toggle("is-active", isActive);
+    if (isActive) {
+      link.setAttribute("aria-current", "location");
+    } else {
+      link.removeAttribute("aria-current");
+    }
   });
 }
 
@@ -103,13 +109,15 @@ function updateScrollProgress() {
 }
 
 function updateActiveSection() {
+  const atBottom = window.scrollY > 0 &&
+    Math.ceil(window.scrollY + window.innerHeight) >= document.documentElement.scrollHeight - 2;
   const offset = window.innerHeight * 0.38;
   const active = sections.reduce((current, section) => {
     const top = section.getBoundingClientRect().top;
     return top - offset <= 0 ? section : current;
   }, null);
 
-  setActiveSection(active ? active.id : "");
+  setActiveSection(atBottom ? sections.at(-1)?.id : active?.id);
 }
 
 function saveCursorPosition() {
@@ -134,7 +142,7 @@ function applyPointerFrame() {
 function applyScrollFrame() {
   pendingScrollFrame = 0;
   updateScrollProgress();
-  if (!supportsIntersectionObserver) updateActiveSection();
+  updateActiveSection();
 }
 
 function queuePointerFrame() {
@@ -320,24 +328,6 @@ if (supportsIntersectionObserver) {
   );
 
   revealItems.forEach((item) => revealObserver.observe(item));
-
-  const sectionObserver = new IntersectionObserver(
-    (entries) => {
-      const visible = entries
-        .filter((entry) => entry.isIntersecting)
-        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-
-      if (visible) {
-        setActiveSection(visible.target.id);
-      }
-    },
-    {
-      rootMargin: "-34% 0px -54% 0px",
-      threshold: [0.12, 0.25, 0.5, 0.75],
-    },
-  );
-
-  sections.forEach((section) => sectionObserver.observe(section));
 
   const motionObserver = new IntersectionObserver(
     (entries) => {
