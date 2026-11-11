@@ -970,7 +970,7 @@ p {
   align-self: stretch;
 }
 
-.ontheway-system {
+.project-system {
   position: relative;
   display: grid;
   align-content: space-between;
@@ -1274,7 +1274,7 @@ p {
 
 .proof-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
 }
 
@@ -1594,7 +1594,7 @@ p {
     grid-template-rows: auto auto auto;
   }
 
-  .ontheway-system {
+  .project-system {
     min-height: auto;
   }
 }
@@ -1765,7 +1765,7 @@ p {
     padding: 22px;
   }
 
-  .ontheway-system {
+  .project-system {
     gap: 16px;
     padding-top: 20px;
   }
@@ -1842,5 +1842,64 @@ p {
 
   .skill-node strong {
     display: none;
+  }
+}
+
+/* Keep the content readable on phones as well as larger screens. */
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 12px;
+  z-index: 100;
+  padding: 12px 18px;
+  color: var(--bg);
+  background: var(--fg);
+  border-radius: 8px;
+  transform: translateY(-150%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+}
+
+.project-links a {
+  min-height: 44px;
+  font-size: 0.88rem;
+}
+
+.project-note {
+  color: var(--soft);
+  font-size: 0.85rem;
+}
+
+.proof-card a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  font-weight: 600;
+}
+
+@media (max-width: 1100px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
   }
 }

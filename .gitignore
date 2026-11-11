@@ -23,3 +23,7 @@ yarn-error.log*
 
 # Logs
 *.log
+
+# Local browser checks
+/.playwright-cli/
+/output/playwright/
